@@ -1,11 +1,11 @@
-const express = require('express');
+const express = require("express");
+const http = require("http");
+const app = express();
 
-const app = express()
+app.use("/", (req, res) => {
+  res.send("hello world~");
+});
 
-app.use('/', (req, res) => {
-    res.send("hello world~")
-})
-
-app.listen(5000, () => {
-    console.log('server on 5000')
-})
+http.createServer(app).listen(5000, () => {
+  console.log("server on 5000");
+});
